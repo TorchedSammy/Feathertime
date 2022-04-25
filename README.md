@@ -19,5 +19,14 @@ git clone https://github.com/TorchedSammy/Feathertime
 ```  
 It should start working immediately.
 
+# Todo
+- [ ] Download CLI if not available
+- [ ] Prompt for API key
+- [ ] Send on events
+  - [x] Save
+  - [x] Change focused doc
+  - [ ] Doc modified
+- [ ] Remove hardcoded executable
+
 # License
 MIT
