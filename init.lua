@@ -41,16 +41,18 @@ end
 
 local docSave = Doc.save
 function Doc:save(...)
-	event(self.abs_filename, true)
 	docSave(self, ...)
+	event(self.abs_filename, true)
 end
 
 local setActiveView = core.set_active_view
 function core.set_active_view(view)
 	if getmetatable(view) == DocView and view ~= av then
 		av = view
-		event(view.doc.abs_filename, false)
-		lastFile = view.doc.abs_filename
+		if not view.doc.new_file then
+			event(view.doc.abs_filename, false)
+			lastFile = view.doc.abs_filename
+		end
 	end
 	setActiveView(view)
 end
