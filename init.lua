@@ -5,7 +5,7 @@ local process = require 'process'
 local Doc = require 'core.doc'
 local DocView = require 'core.docview'
 
---HOME = HOME -- makes lua lsp quiet
+HOME = HOME -- makes lua lsp quiet
 --local wakatimeConf = core.try(lip.load, HOME .. '/.wakatime.cfg')
 local wakatimeCli = HOME .. '/.wakatime/wakatime-cli-linux-amd64'
 local lastHeartbeat = os.time()
@@ -14,7 +14,7 @@ local lastFile = nil
 local wakatimeIdentity = 'Lite XL/2.1 Feathertime/0.1'
 
 local function enoughTime(t)
-	return lastHeartbeat + (0.1 * 60 * 1000) < t
+	return lastHeartbeat + (2 * 60 * 1000) < t
 end
 
 local function heartbeat(file, wrote)
