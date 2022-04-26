@@ -13,8 +13,9 @@ local started -- whether we started/initialized everything yet
 local lastFile -- last file path
 local lastHeartbeat = os.time() -- last time of heartbeat
 local home = os.getenv 'WAKATIME_HOME' or HOME
+local ver = '0.1.0'
 
-local wkIdentity = 'Lite XL/2.1 Feathertime/0.1'
+local wkIdentity = string.format('Lite XL/%s Feathertime/%s', VERSION, ver)
 local wkCli
 
 local conf = config.feathertime or {}
