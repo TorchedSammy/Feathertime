@@ -130,7 +130,7 @@ else
 end
 
 local function enoughTime(t)
-	return lastHeartbeat + (2 * 60 * 1000) < t
+	return lastHeartbeat + (0.2 * 60 * 1000) < t
 end
 
 local function heartbeat(file, wrote)
@@ -148,7 +148,6 @@ end
 local function event(file, wrote)
 	if not started then return end
 
-	core.log_quiet('[Feathertime] Got event for ' .. file)
 	local time = os.time()
 	if wrote or enoughTime(time) or lastFile ~= file then
 		heartbeat(file, wrote)
@@ -161,6 +160,15 @@ local docSave = Doc.save
 function Doc:save(...)
 	docSave(self, ...)
 	event(self.abs_filename, true)
+end
+
+local dvTextInput = DocView.on_text_input
+function DocView:on_text_input(text)
+	dvTextInput(self, text)
+	if getmetatable(self) == DocView and not self.doc.new_file then
+		event(self.doc.abs_filename, false)
+		lastFile = self.doc.abs_filename
+	end
 end
 
 local setActiveView = core.set_active_view

@@ -9,8 +9,7 @@ This is *very* work in progress!
 
 # Installation
 Currently, Feathertime requires that you 
-1. Are on Linux
-3. Already have everything setup (like from another text editor)
+1. Already have everything setup (like from another text editor)
 
 Once you do that, just drop this repo into your plugins folder like:
 ```
@@ -25,7 +24,7 @@ It should start working immediately.
 - [ ] Send on events
   - [x] Save
   - [x] Change focused doc
-  - [ ] Doc modified
+  - [x] Doc modified
 - [x] Remove hardcoded executable
 
 # License
