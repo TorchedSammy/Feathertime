@@ -26,7 +26,7 @@ It should start working immediately.
   - [x] Save
   - [x] Change focused doc
   - [ ] Doc modified
-- [ ] Remove hardcoded executable
+- [x] Remove hardcoded executable
 
 # License
 MIT
