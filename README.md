@@ -21,7 +21,7 @@ It should start working immediately.
 # Todo
 - [ ] Download CLI if not available
 - [ ] Prompt for API key
-- [ ] Send on events
+- [x] Send on events
   - [x] Save
   - [x] Change focused doc
   - [x] Doc modified

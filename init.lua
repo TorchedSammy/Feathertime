@@ -1,4 +1,4 @@
--- mod-version:2 -- lite-xl 2.0
+-- mod-version:3
 local core = require 'core'
 local config = require 'core.config'
 local process = require 'process'
@@ -146,6 +146,9 @@ local function heartbeat(file, wrote)
 	core.log_quiet '[Feathertime] Sent heartbeat!'
 end
 
+--- Send an event to Wakatime.
+--- @param file string Absolute file path
+--- @param wrote boolean Whether the file got written to disk (ie save)
 local function event(file, wrote)
 	if not started then return end
 
